@@ -5,22 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
         form {
-            max-width: 1000px;
+            max-width: 700px;
             margin: 0 auto;
             padding: 20px;
+            border-style: dashed;
+            border-color: orangered;
         }
-        h1{
+
+        h1 {
             text-align: center;
         }
 
@@ -28,30 +22,42 @@
             display: inline-flex;
             width: 200px;
             margin-bottom: 10px;
-            text-align: right;
         }
-        .row{
-            margin-top: -25px;
-        }
-        .col{
-            margin-left: 217px;
-        }
-        .times{
-            display: grid;
-            grid-template-columns: auto auto;
 
+        .row {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            margin-left: 200px;
+            margin-top: -30px;
         }
+        input[type="radio"]{
+           width: 16px;
+           height: 16px;
+        }
+        input[name="name"]{
+            width: 300px;
+            height: 25px;
+        }
+        select[name="club"]{
+            width: 310px;
+            height: 30px;
+        }
+
         .checkbox-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
         }
-        .checkbox-grid-child{
+
+        .checkbox-grid-child1 {
             margin-left: 200px;
             margin-top: -25px;
         }
-        input[type="checkbox"]:checked {
-            background-color: blue;
+
+        .checkbox-grid-child2 {
+            margin-left: 80px;
+            margin-top: -25px;
         }
+
         button {
             margin-top: 20px;
             padding: 10px 0;
@@ -63,7 +69,38 @@
         }
 
         button:hover {
-            background-color: #e0a800;
+            background-color: orangered;
+        }
+
+        div input[type="checkbox"] {
+            display: none;
+        }
+
+        input[type="checkbox"]+label {
+            position: relative;
+            padding-left: 24px;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"]+label:before {
+            content: "";
+            position: absolute;
+            top: 4px;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            border: 1px solid black;
+            background-color: none;
+            box-sizing: border-box;
+
+        }
+
+        input[type="checkbox"]:checked+label:before {
+            background-color: orangered;
+        }
+
+        div input[type="checkbox"]:checked+label {
+            border: none;
         }
     </style>
 </head>
@@ -85,29 +122,67 @@
         <label for="times">Be time for you</label>
         <div name="times" class="row">
             <div class="col">
-                <input type="radio" name="time" value="Saturday mornings">Saturday mornings
-                <input type="radio" name="time" value="Saturday afternoons">Saturday afternoons
+                <div>
+                    <input type="radio" name="time" value="Saturday mornings" id="time">
+                    <label for="time">Saturday mornings</label>
+                </div>
+                <div>
+                    <input type="radio" name="time" value="Saturday afternoons" id="time">
+                    <label for="time">Saturday afternoons</label>
+                </div>
             </div>
             <div class="col">
-            <input type="radio" name="time" value="Sunday afternoons">Sunday afternoons<br>
-
+                <div>
+                    <input type="radio" name="time" value="Sunday afternoons" id="time">
+                    <label for="time">Sunday afternoons</label>
+                </div>
             </div>
         </div>
 
 
         <label for="skills">Your Skills</label>
         <div class=checkbox-grid name="skills">
-            <div class ="checkbox-grid-child">
-                <input type="checkbox" value="the best coder" name="thebestcoder" />the best coder <br>
-                <input type="checkbox" value="a super star" name="asuperstar" />a super star<br>
-                <input type="checkbox" value="singer" name="singer" />singer<br>
-                <input type="checkbox" value="the best eater" name="thebesteater" />the best eater<br>
+            <div class="checkbox-grid-child1">
+                <div>
+                    <input type="checkbox" value="the best coder" name="thebestcoder" id="thebestcoder" />
+                    <label for="thebestcoder">the best coder</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" value="a super star" name="asuperstar" id="asuperstar" />
+                    <label for="asuperstar">a super star</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" value="singer" name="singer" id="singer" />
+                    <label for="singer">singer</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" value="the best eater" name="thebesteater" id="thebesteater" />
+                    <label for="thebesteater">the best eater</label>
+                </div>
             </div>
-            <div class ="checkbox-grid-child">
-                <input type="checkbox" value="good in arts" name="goodinarts" />good in arts<br>
-                <input type="checkbox" value="a crazy dancer" name="acrazydancer" />a crazy dancer<br>
-                <input type="checkbox" value="good in design" name="goodindesign" />good in design<br>
-                <input type="checkbox" value="good in speeches" name="goodinspeeches" />good in speeches<br>
+            <div class="checkbox-grid-child2">
+                <div>
+                    <input type="checkbox" value="good in arts" name="goodinarts" id="goodinarts" />
+                    <label for="goodinarts">good in arts</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" value="a crazy dancer" name="acrazydancer" id="acrazydancer" />
+                    <label for="acrazydancer">a crazy dancer</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" value="good in design" name="goodindesign" id="goodindesign" />
+                    <label for="goodindesign">good in design</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" value="good in speeches" name="goodinspeeches" id="goodinspeeches" />
+                    <label for="goodinspeeches">good in speeches</label>
+                </div>
             </div>
         </div>
 

@@ -1,4 +1,21 @@
-<div class="result" style="text-align:center">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .result{
+            width: 600px;
+            border-style: dashed;
+            border-color: orangered;
+            text-align: center;
+            margin-left: 300px;
+        }
+    </style>
+</head>
+<body>
+<div class="result" >
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiA12yd2RmUTc0L5Z52ACzkZuKVc4ko8kdMDcKni2loBDHhzgHGKHkXnZgMxfhOoUwIRk&usqp=CAU" alt="Huan chuong">
 <h1>Thx for <?php if(isset($_POST["name"])) { echo $_POST["name"]; } ?> !!</h1>
 
@@ -72,4 +89,8 @@ if (isset($_POST["goodinspeeches"])) {
 </p>
 <p>You will be avaliable on <?php if(isset($_POST["time"])) { echo $_POST["time"]; } ?></p><br>
 </div>
+</body>
+</html>
+
+
 
